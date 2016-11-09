@@ -13,7 +13,7 @@ services:
       - ./apache2/logs:/var/log/apache2
     restart: always
     links: 
-      - mailserver:postfix
+      - postfix:postfix
 
   postfix:
     image: catatnight/postfix

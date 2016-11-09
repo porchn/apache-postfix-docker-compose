@@ -1,0 +1,3 @@
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.25.0.3. Set the 'ServerName' directive globally to suppress this message
+[Wed Nov 09 10:05:32.014004 2016] [mpm_prefork:notice] [pid 1] AH00163: Apache/2.4.7 (Ubuntu) PHP/5.5.9-1ubuntu4.19 configured -- resuming normal operations
+[Wed Nov 09 10:05:32.015039 2016] [core:notice] [pid 1] AH00094: Command line: 'apache2 -D FOREGROUND'
