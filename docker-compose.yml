@@ -5,12 +5,15 @@ services:
     image: porchn/apache-mongo-php
     container_name: apache
     ports:
-      - "80:80"
-      - "443:443"
+      - "8080:80"
     volumes:
       - ./apache2/conf:/etc/apache2/sites-enabled
       - ./apache2/www:/var/www
+      - ./nginx/file-media/farms:/var/www/farms
+      - ./nginx/file-media/assets:/var/www/assets
       - ./apache2/logs:/var/log/apache2
+    environment:
+      - TZ=Asia/Bangkok
     restart: always
     links: 
       - postfix:postfix
@@ -21,6 +24,7 @@ services:
     ports:
       - "25:25"
     environment:
+      - TZ=Asia/Bangkok
       - maildomain=mail.abc.com
       - smtp_user=abc:123
     volumes:
@@ -28,3 +32,20 @@ services:
       - ./postfix/logs:/var/log/postfix
       - ./postfix/tls:/etc/postfix/certs
     restart: always
+
+  nginx:
+    image: nginx
+    container_name: nginx
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx/conf:/etc/nginx/conf.d
+      - ./nginx/file-media:/var/www
+    environment:
+      - TZ=Asia/Bangkok
+      - NGINX_PORT=80
+    restart: always
+    links: 
+      - postfix:postfix
+      - apache:apache
