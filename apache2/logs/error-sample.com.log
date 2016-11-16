@@ -1,0 +1,4 @@
+[Wed Nov 16 12:28:44.822310 2016] [:error] [pid 10] [client 172.18.0.4:38956] PHP Notice:  Undefined index: CI_ENV in /var/www/index.php on line 3
+[Wed Nov 16 12:28:46.061302 2016] [:error] [pid 9] [client 172.18.0.4:38958] PHP Notice:  Undefined index: CI_ENV in /var/www/index.php on line 3
+[Wed Nov 16 12:28:46.468747 2016] [:error] [pid 6] [client 172.18.0.4:38960] PHP Notice:  Undefined index: CI_ENV in /var/www/index.php on line 3
+[Wed Nov 16 12:28:46.689876 2016] [:error] [pid 7] [client 172.18.0.4:38962] PHP Notice:  Undefined index: CI_ENV in /var/www/index.php on line 3
