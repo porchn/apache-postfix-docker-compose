@@ -10,7 +10,7 @@ services:
       - ./apache2/conf:/etc/apache2/sites-enabled
       - ./apache2/www:/var/www
       - ./nginx/file-media/farms:/var/www/farms
-      - ./nginx/file-media/assets:/var/www/assets
+      - ./nginx/file-media/static:/var/www/static
       - ./apache2/logs:/var/log/apache2
     environment:
       - TZ=Asia/Bangkok
